@@ -1,0 +1,349 @@
+/* Variáveis de cores - Agora com tema escuro */
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #8d68e6;
+    --accent-color: #9d4edd;
+    --accent-hover: #c77dff;
+    --light-color: #e0e0ff;
+    --dark-color: #131419;
+    --dark-bg: #1a1a2e;
+    --darker-bg: #0f0f1a;
+    --card-bg: #252538;
+    --card-hover: #32324d;
+    --gradient-start: #2f0748;
+    --gradient-end: #4e54c8;
+    --button-color: #ff3f5c;
+    --button-hover: #ff6b80;
+    --text-color: #e2e2f0;
+    --border-color: #383854;
+}
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--darker-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header e navegação */
+header {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.banner {
+    padding: 60px 20px;
+    text-align: center;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%23ffffff" fill-opacity="0.1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"%3E%3C/path%3E%3C/svg%3E');
+    background-size: cover;
+    background-position: center bottom;
+}
+
+/* Animação para o título AESCORP */
+.banner h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #fff, #9d4edd, #c77dff, #fff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s infinite linear, pulse 2s infinite alternate;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(157, 78, 221, 0.7);
+    }
+    100% {
+        transform: scale(1.05);
+        text-shadow: 0 0 20px rgba(157, 78, 221, 0.9), 0 0 30px rgba(157, 78, 221, 0.5);
+    }
+}
+
+.banner p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    background-color: rgba(10, 10, 20, 0.7);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    font-weight: 600;
+    padding: 10px 5px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Seções principais */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 60px;
+    background-color: var(--dark-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    border: 1px solid var(--border-color);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    font-size: 1.8rem;
+}
+
+h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.section-desc {
+    color: var(--light-color);
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Cards de API */
+.api-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.api-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    color: var(--light-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 80px;
+}
+
+.api-card:hover {
+    background-color: var(--card-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: var(--accent-hover);
+    border-color: var(--accent-color);
+}
+
+/* Subseções */
+.sub-section {
+    margin-top: 30px;
+    background-color: rgba(15, 15, 30, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.sub-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Botão Canal WhatsApp */
+.canal-button {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 100;
+}
+
+.canal-button a {
+    display: flex;
+    align-items: center;
+    background-color: var(--button-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(255, 63, 92, 0.3);
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.canal-button span {
+    margin-right: 10px;
+}
+
+.canal-button i {
+    font-size: 1.5rem;
+}
+
+.canal-button a:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 63, 92, 0.4);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    margin: 5px 0;
+    opacity: 0.7;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2.8rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav li {
+        margin: 5px 0;
+    }
+    
+    .api-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 2.2rem;
+    }
+    
+    .banner p {
+        font-size: 1rem;
+    }
+    
+    .canal-button {
+        right: 15px;
+        bottom: 15px;
+    }
+    
+    .canal-button a {
+        padding: 10px 15px;
+    }
+}
